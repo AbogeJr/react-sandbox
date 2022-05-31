@@ -1,5 +1,7 @@
+import './index.css'
+
 function App() {
-  const name = 'Aloys'
+  const name = "Aloys"
   const tasks = [
     {
     "id":1,
@@ -20,19 +22,19 @@ function App() {
     ]
     function printtask(item) {
       return (
-        <div className="container">
-          {/* <h2>{item.id}</h2> */}
-          <h3>{item.title}</h3>
+        <div className="task-container">
+          <h3> <span className="id">{item.id}.</span> {item.title}</h3>
           <p>{item.body}</p>
         </div>
       ) 
     }
   return (
     <div className="container">
-      <h1>Hello, {name ? name : 'World'}</h1>
-      <p>
+      <h1>Hello, {name ? name : "World"}</h1>
+      <h2>Tasks:</h2>
+      <div className="box">
         {tasks.map(printtask)}
-      </p>
+      </div>
     </div>
   );
 }
